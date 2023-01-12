@@ -1,4 +1,4 @@
-package edu.upc.dsa.domain.entity.vo;
+package edu.upc.dsa.domain.entity;
 
 public class Issue {
 

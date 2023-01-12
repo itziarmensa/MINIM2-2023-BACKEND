@@ -10,7 +10,7 @@ import edu.upc.dsa.domain.entity.to.Coins;
 import edu.upc.dsa.domain.entity.to.UserRegister;
 import edu.upc.dsa.domain.entity.vo.Credentials;
 import edu.upc.dsa.domain.entity.ObjectType;
-import edu.upc.dsa.domain.entity.vo.Issue;
+import edu.upc.dsa.domain.entity.Issue;
 import edu.upc.dsa.infraestructure.GameManagerDBImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

@@ -7,7 +7,7 @@ import edu.upc.dsa.domain.entity.User;
 import edu.upc.dsa.domain.entity.exceptions.NotEnoughCoinsException;
 import edu.upc.dsa.domain.entity.exceptions.UserAlreadyExistsException;
 import edu.upc.dsa.domain.entity.vo.Credentials;
-import edu.upc.dsa.domain.entity.vo.Issue;
+import edu.upc.dsa.domain.entity.Issue;
 
 import java.util.List;
 
