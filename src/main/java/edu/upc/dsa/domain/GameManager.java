@@ -7,6 +7,7 @@ import edu.upc.dsa.domain.entity.User;
 import edu.upc.dsa.domain.entity.exceptions.NotEnoughCoinsException;
 import edu.upc.dsa.domain.entity.exceptions.UserAlreadyExistsException;
 import edu.upc.dsa.domain.entity.vo.Credentials;
+import edu.upc.dsa.domain.entity.vo.Issue;
 
 import java.util.List;
 
@@ -39,4 +40,7 @@ public interface GameManager {
     public Characters getCharacter(String characterId);
     public void deleteCharacter(String characterId);
     public double getCoinsCharacter(String characterId);
+
+    /**Issue*/
+    public void addIssue(Issue issue);
 }

@@ -8,6 +8,7 @@ import edu.upc.dsa.domain.entity.User;
 import edu.upc.dsa.domain.entity.exceptions.NotEnoughCoinsException;
 import edu.upc.dsa.domain.entity.exceptions.UserAlreadyExistsException;
 import edu.upc.dsa.domain.entity.vo.Credentials;
+import edu.upc.dsa.domain.entity.vo.Issue;
 import edu.upc.dsa.domain.entity.vo.UserCharacters;
 import edu.upc.dsa.domain.entity.vo.UserMyObjects;
 import edu.upc.eetac.dsa.*;
@@ -282,5 +283,11 @@ public class GameManagerDBImpl implements GameManager {
         }
         logger.info("User with email " + email + " has requested for his/her characters");
         return characters;
+    }
+
+    @Override
+    public void addIssue(Issue issue){
+        this.session.save(issue);
+        logger.info("The user " + issue.getInformer() + " has send the issue: " + issue.getMessage());
     }
 }

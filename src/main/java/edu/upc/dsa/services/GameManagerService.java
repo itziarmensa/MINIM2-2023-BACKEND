@@ -10,6 +10,7 @@ import edu.upc.dsa.domain.entity.to.Coins;
 import edu.upc.dsa.domain.entity.to.UserRegister;
 import edu.upc.dsa.domain.entity.vo.Credentials;
 import edu.upc.dsa.domain.entity.ObjectType;
+import edu.upc.dsa.domain.entity.vo.Issue;
 import edu.upc.dsa.infraestructure.GameManagerDBImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -324,5 +325,17 @@ public class GameManagerService {
         GenericEntity <Coins> entity = new GenericEntity<Coins>(newCoins) {  };
         if (newCoins == null) return Response.status(404).entity(entity).build();
         return Response.status(200).entity(entity).build();
+    }
+
+    @POST
+    @ApiOperation(value = "send an issue", notes = "Send Issue")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successful", response = Issue.class)
+    })
+    @Path("/issue")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response sendIssue(Issue issue) {
+        this.gameManager.addIssue(issue);
+        return Response.status(200).entity(issue).build();
     }
 }
