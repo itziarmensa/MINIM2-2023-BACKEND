@@ -43,4 +43,5 @@ public interface GameManager {
 
     /**Issue*/
     public void addIssue(Issue issue);
+    public List<Issue> getListIssues();
 }

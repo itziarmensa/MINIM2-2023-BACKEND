@@ -290,4 +290,16 @@ public class GameManagerDBImpl implements GameManager {
         this.session.save(issue);
         logger.info("The user " + issue.getInformer() + " has send the issue: " + issue.getMessage());
     }
+
+    @Override
+    public List<Issue> getListIssues(){
+        List<Issue> issues = new ArrayList<>();
+        List<Object> listIssues = this.session.findAll(Issue.class);
+        for (Object o : listIssues) {
+            Issue issue = (Issue) o;
+            issues.add(issue);
+        }
+        logger.info("All Users returned");
+        return issues;
+    }
 }

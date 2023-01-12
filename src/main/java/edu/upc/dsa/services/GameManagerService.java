@@ -338,4 +338,18 @@ public class GameManagerService {
         this.gameManager.addIssue(issue);
         return Response.status(200).entity(issue).build();
     }
+
+    @GET
+    @ApiOperation(value = "get all issues", notes = "Get Issues")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successful", response = Issue.class)
+    })
+    @Path("/issue")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response getIssues() {
+        List<Issue> list = this.gameManager.getListIssues();
+        GenericEntity<List<Issue>> entity = new GenericEntity<List<Issue>>(list) {
+        };
+        return Response.status(200).entity(entity).build();
+    }
 }
